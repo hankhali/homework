@@ -4,271 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore UAE - Home</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Smooth scrolling behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Hero Section with Video Background */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #FFFFF0;
-            overflow: hidden;
-        }
-
-        /* Video styling */
-        .hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            object-fit: cover;
-        }
-
-        /* Hero Text Styling */
-        .hero-text {
-            position: absolute; /* Place the text on top of the video */
-            z-index: 2; /* Ensure it's above the video */
-            color: #ffffff;
-            text-shadow: 5px 5px 20px rgba(0, 0, 0, 1); /* Shadow for better contrast */
-            max-width: 1000px;
-            padding: 20px;
-        }
-
-        .hero-text h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5em;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .hero-text p {
-            font-size: 1.4em;
-            max-width: 700px;
-            margin: 0 auto;
-            text-shadow: 4px 4px 15px rgba(0, 0, 0, 1); /* Shadow for readability */
-        }
-
-        /* Overlay to make text more readable */
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Slightly darker overlay */
-            z-index: 1;
-        }
-
-        /* Sticky Navigation Bar */
-        nav {
-            background-color: #333;
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-            position: relative; /* For drop-down positioning */
-        }
-
-        nav ul li a {
-            color: #FFFFF0;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: #FFFFF0;
-        }
-
-        /* Drop-down Menu Styles */
-        .dropdown-content {
-            display: none; /* Hidden by default */
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            top: 100%; /* Drop-down appears below the menu */
-        }
-
-        .dropdown-content a {
-            color: #FFFFF0;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
-
-        /* Show the drop-down on hover */
-        nav ul li:hover .dropdown-content {
-            display: block;
-        }
-
-        /* About UAE Section */
-        #about-uae {
-            background-image: url('UAE flag colours main.png'); /* Add your image path here */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 20px;
-            position: relative;
-        }
-
-        #about-uae::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay to make text readable */
-            z-index: 1;
-        }
-
-        #about-uae .content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        #about-uae h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3em;
-            color: #fffff0;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-        }
-
-        #about-uae p {
-            font-size: 1.5em;
-            line-height: 1.8;
-            margin: 20px 0;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: justify;
-            color: #fffff0;
-        }
-
-        /* Tourist Attractions Section */
-        #tourist-attractions {
-            background-color: #111; /* Dark color for section */
-            color: #fff; /* White text for readability */
-            padding: 80px 20px;
-        }
-
-        .carousel-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 1400px;
-            margin: 50px auto;
-            gap: 50px;
-        }
-
-        .carousel {
-            width: 90%;
-            height: 600px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #111; /* Same color as section background */
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        .carousel-slide {
-            position: absolute;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel-slide img {
-            width: 45%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .carousel-slide p {
-            width: 45%;
-            font-size: 1.4em;
-            line-height: 1.6;
-            text-align: justify;
-            padding: 20px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .carousel-wrapper {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .carousel-slide {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .carousel-slide img,
-            .carousel-slide p {
-                width: 90%;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+    <!-- Link to External CSS File -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -277,11 +16,12 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li>
-                <a href="#introduction">Introduction</a>
+                <a href="#introduction">Introduction to UAE</a> <!-- Changed from "Introduction" to "Introduction to UAE" -->
                 <!-- Drop-down content -->
                 <div class="dropdown-content">
-                    <a href="#about-uae">About UAE</a>
-                    <a href="#tourist-attractions">Tourist Attractions</a>
+                    <a href="#about-uae">Introduction to UAE</a> <!-- Changed from "About UAE" to "Introduction to UAE" -->
+                    <a href="#landmarks">Our Landmarks</a> <!-- Changed from "Tourist Attractions" to "Our Landmarks" -->
+                    <li><a href="about.html">About UAE</a></li> <!-- Link to the new About UAE page -->
                 </div>
             </li>
         </ul>
@@ -294,78 +34,60 @@
             <p>Explore the perfect blend of Arabian heritage and modern innovation. From the stunning Burj Khalifa to the peaceful deserts, the UAE offers a world of experiences.</p>
         </div>
         <video autoplay muted loop>
-            <source src="Screen Recording 2024-10-28 at 6.23.57 PM.mov" type="video/mp4">
+            <source src="images/bakgroundvideo.mov" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- About UAE Section -->
+    <!-- Introduction to UAE Section -->
     <section id="about-uae">
         <div class="content">
-            <h2>About UAE</h2>
+            <h2>Introduction to UAE</h2> <!-- Changed from "About UAE" to "Introduction to UAE" -->
             <p>The United Arab Emirates (UAE) is a federation of seven emirates, each with its own unique characteristics. Established in 1971, the UAE has grown into a global hub for tourism, commerce, and innovation. It is known for its stunning modern architecture, rich cultural heritage, and vibrant economy. The country's impressive transformation over the past decades has made it a leading destination for travelers from all over the world.</p>
         </div>
     </section>
 
-    <!-- Tourist Attractions Section -->
-    <section id="tourist-attractions">
-        <div class="carousel-wrapper">
-            <!-- First Carousel (Left) -->
-            <section class="carousel">
-                <div class="carousel-slide active">
-                    <img src="home-bg.jpg" alt="Burj Khalifa">
-                    <p>The Burj Khalifa is the tallest building in the world, located in Dubai. It offers breathtaking views of the city from its observation decks and is an iconic symbol of modern architecture.</p>
-                </div>
+    <!-- Our Landmarks Section -->
+    <section id="landmarks"> <!-- Changed id from "tourist-attractions" to "landmarks" -->
+        <div class="landmarks">
 
-                <div class="carousel-slide">
-                    <p>The Sheikh Zayed Grand Mosque in Abu Dhabi is a stunning piece of Islamic architecture with its gleaming white domes and intricate designs, attracting visitors from all over the world.</p>
-                    <img src="img-20161226-180421-largejpg.jpg" alt="Sheikh Zayed Mosque">
-                </div>
+            <!-- First Landmark -->
+            <div class="landmark">
+                <img src="images/home-bg.jpg" alt="Burj Khalifa">
+                <p>The Burj Khalifa is the tallest building in the world, located in Dubai. It offers breathtaking views of the city from its observation decks and is an iconic symbol of modern architecture.</p>
+            </div>
 
-                <div class="carousel-slide">
-                    <img src="Museum-of-the-future.-Night-View.-Unique-close-up-perspective.-Futuristic-design.-Duba.jpg" alt="Museum of the Future">
-                    <p>The Museum of the Future in Dubai is a modern architectural marvel, symbolizing innovation and technological advancement in the UAE.</p>
-                </div>
-            </section>
+            <!-- Second Landmark -->
+            <div class="landmark">
+                <img src="images/img-20161226-180421-largejpg.jpg" alt="Sheikh Zayed Mosque">
+                <p>The Sheikh Zayed Grand Mosque in Abu Dhabi is a stunning piece of Islamic architecture with its gleaming white domes and intricate designs, attracting visitors from all over the world.</p>
+            </div>
 
-            <!-- Second Carousel (Right) -->
-            <section class="carousel">
-                <div class="carousel-slide active">
-                    <p>The Louvre Abu Dhabi, located on Saadiyat Island, represents a global cultural hub in the UAE. Its architecture and art collections attract art enthusiasts from all over the world.</p>
-                    <img src="d4.jpg" alt="Louvre Abu Dhabi">
-                </div>
+            <!-- Third Landmark -->
+            <div class="landmark">
+                <img src="images/Museum-of-the-future.-Night-View.-Unique-close-up-perspective.-Futuristic-design.-Duba.jpg" alt="Museum of the Future">
+                <p>The Museum of the Future in Dubai is a modern architectural marvel, symbolizing innovation and technological advancement in the UAE.</p>
+            </div>
 
-                <div class="carousel-slide">
-                    <img src="top_attractions_in_dubai_dubai_drame.jpg" alt="Dubai Frame">
-                    <p>The Dubai Frame is an iconic landmark offering stunning views of both the old and new Dubai, serving as a symbolic bridge between the past and the future.</p>
-                </div>
+            <!-- Fourth Landmark -->
+            <div class="landmark">
+                <img src="images/d4.jpg" alt="Louvre Abu Dhabi">
+                <p>The Louvre Abu Dhabi, located on Saadiyat Island, represents a global cultural hub in the UAE. Its architecture and art collections attract art enthusiasts from all over the world.</p>
+            </div>
 
-                <div class="carousel-slide">
-                    <p>Al Ain Oasis, a UNESCO World Heritage site, is a peaceful retreat in the UAE, showcasing the region’s rich history and date palm agriculture.</p>
-                    <img src="Xey45bGA-2016_alain_1_base-1.jpg" alt="Al Ain Oasis">
-                </div>
-            </section>
+            <!-- Fifth Landmark -->
+            <div class="landmark">
+                <img src="images/top_attractions_in_dubai_dubai_drame.jpg" alt="Dubai Frame">
+                <p>The Dubai Frame is an iconic landmark offering stunning views of both the old and new Dubai, serving as a symbolic bridge between the past and the future.</p>
+            </div>
+
+            <!-- Sixth Landmark -->
+            <div class="landmark">
+                <img src="images/Xey45bGA-2016_alain_1_base-1.jpg" alt="Al Ain Oasis">
+                <p>Al Ain Oasis, a UNESCO World Heritage site, is a peaceful retreat in the UAE, showcasing the region’s rich history and date palm agriculture.</p>
+            </div>
         </div>
     </section>
-
-    <!-- JavaScript for Carousel Fade Effect -->
-    <script>
-        const carousels = document.querySelectorAll('.carousel');
-        carousels.forEach(carousel => {
-            let slides = carousel.querySelectorAll('.carousel-slide');
-            let currentSlide = 0;
-
-            function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                slides[index].classList.add('active');
-            }
-
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }, 4000); // Change slide every 4 seconds
-        });
-    </script>
 
 </body>
 </html>
