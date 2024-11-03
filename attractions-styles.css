@@ -1,0 +1,121 @@
+/* Basic reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #333;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #FFFFF0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Active link styling */
+nav ul li a.active {
+    color: #ffffff; /* Gold color for active link */
+}
+
+/* Dropdown menu styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+}
+
+.dropdown-content a {
+    color: #FFFFF0;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Card Container Styling */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 1em 0 0.5em;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card p {
+    padding: 0 1em 1.5em;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Open Sans', sans-serif;
+}

@@ -4,40 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About UAE</title>
-    <link rel="stylesheet" href="about-styles.css"> <!-- Link to unique CSS for this page -->
+    <link rel="stylesheet" href="about-styles.css">
 </head>
 <body>
-
-    <!-- Sticky Navigation Bar with Drop-Down -->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li> <!-- Links back to the homepage -->
-            <li><a href="index.html#introduction">Introduction to UAE</a></li>
-            <li><a href="about.html">About UAE</a></li> <!-- Active link to About page -->
-            <li><a href="index.html#landmarks">Our Landmarks</a></li>
+            <li><a href="index.html#home">Home</a></li>
+            <li>
+                <a href="#introduction">Introduction to UAE</a>
+                <div class="dropdown-content">
+                    <a href="index.html#about-uae">Introduction to UAE</a>
+                    <a href="index.html#landmarks">Our Landmarks</a>
+                </div>
+            </li>
+            <li><a href="about.html">About UAE</a></li> <!-- Make About UAE a main item -->
+            <li><a href="attractions.html">Top Attractions</a></li>
         </ul>
     </nav>
-
-    <!-- About UAE Section -->
-    <section id="about-uae">
-        <div class="content">
-            <h1>About UAE</h1>
-            <p>The United Arab Emirates (UAE) is a country in Western Asia, located at the eastern end of the Arabian Peninsula. The UAE is a federation of seven emirates, including Dubai, Abu Dhabi, and Sharjah. It is known for its rich cultural heritage, vibrant cities, and rapid development.</p>
-
-            <h2>History</h2>
-            <p>The UAE was established in 1971, uniting seven emirates under one flag. Before this, the region was known as the Trucial States, a group of sheikhdoms that had signed a treaty with the British government. Since its establishment, the UAE has transformed into a major global economic hub.</p>
-
-            <h2>Culture</h2>
-            <p>The UAE's culture is deeply rooted in Islamic traditions and Arabian heritage. While the country has modernized, it still preserves customs, including falconry, camel racing, and traditional dress. Arabic is the official language, and Islam is the official religion.</p>
-
-            <h2>National Symbols</h2>
-            <p>The UAE's national flag consists of four colors: red, green, white, and black, representing Arabian unity. The national emblem features a golden falcon holding a red banner, with the UAE flag and seven stars representing the seven emirates.</p>
-
-            <h2>Traditional Dress</h2>
-            <p>The traditional dress in the UAE is the Kandura for men, a long white robe, and the Abaya for women, a long black cloak. These garments symbolize modesty and are well suited for the desert climate.</p>
+    
+    
+    
+    <section id="about-section">
+        <div class="card-container">
+            <div class="card" id="about-uae">
+                <img src="images/about_uae.jpeg" alt="About UAE Image">
+                <h2>About UAE</h2>
+                <p>The United Arab Emirates (UAE) is a country in Western Asia, located at the eastern end of the Arabian Peninsula. The UAE is a federation of seven emirates, including Dubai, Abu Dhabi, and Sharjah. It is known for its rich cultural heritage, vibrant cities, and rapid development.</p>
+            </div>
+            <div class="card" id="history">
+                <img src="images/history.jpeg" alt="History of UAE">
+                <h2>History</h2>
+                <p> 
+                    The United Arab Emirates was established in 1971 when seven emirates united under the visionary leadership of Sheikh Zayed bin Sultan Al Nahyan. This historic union marked the beginning of the UAE's rapid transformation from a largely desert region into a thriving global hub for trade, tourism, and innovation.</p>
+            </div>
+            <div class="card" id="culture">
+                <img src="images/culture.jpeg" alt="Culture of UAE">
+                <h2>Culture</h2>
+                <p>The UAE's culture is deeply rooted in Islamic traditions and Arabian heritage. While the country has modernized, it still preserves customs, including falconry, camel racing, and traditional dress. Arabic is the official language, and Islam is the official religion.</p>
+            </div>
+            <div class="card" id="national-symbols">
+                <img src="images/national.jpeg" alt="National Symbols of UAE">
+                <h2>National Symbols</h2>
+                <p>The UAE's national flag consists of four colors: red, green, white, and black, representing Arabian unity. The national emblem features a golden falcon holding a red banner, with the UAE flag and seven stars representing the seven emirates.</p>
+            </div>
+            <div class="card" id="traditional-dress">
+                <img src="images/dress.png" alt="Traditional Dress of UAE">
+                <h2>Traditional Dress</h2>
+                <p>The traditional dress in the UAE is the Kandura for men, a long white robe, and the Abaya for women, a long black cloak. These garments symbolize modesty and are well suited for the desert climate.</p>
+            </div>
+            <div class="card" id="Emblem">
+                <img src="images/emblem.jpeg" alt="Emblem">
+                <h2>Emblem</h2>
+                <p>The traditional dress in the UAE is the Kandura for men, a long white robe, and the Abaya for women, a long black cloak. These garments symbolize modesty and are well suited for the desert climate.</p>
+            </div>
         </div>
     </section>
-
 </body>
 </html>
-
