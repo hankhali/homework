@@ -94,7 +94,6 @@ nav ul li:hover .dropdown-content {
 
 
 nav ul li a.active {
-    color: #007bff; /* Change color to indicate the active page */
+    color: #ffffff;
     font-weight: bold;
-    text-decoration: underline;
 }
